@@ -2,7 +2,7 @@
 Author URI: http://www.jasonbobich.com
 Plugin URI: To come...
 Contributors: themeblvd
-Tags: custom sidebars, sidebar, sidebars, widget, widgets, widget areas, unlimited sidebars, Theme Blvd, themeblvd, Jason Bobich
+Tags: widgets, Theme Blvd, themeblvd, Jason Bobich
 Requires at least: 3.2
 Stable Tag: 1.0.0
 
