@@ -3,7 +3,7 @@
 Plugin Name: Theme Blvd Widget Pack
 Plugin URI: 
 Description: This plugin adds a pack of widgets that work with the Theme Blvd framework.
-Version: 1.0.0
+Version: 1.0.1
 Author: Jason Bobich
 Author URI: http://jasonbobich.com
 License: GPL2
@@ -26,7 +26,7 @@ License: GPL2
 
 */
 
-define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.0' );
+define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.1' );
 define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) ); 
 define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
 
@@ -70,7 +70,7 @@ add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
  */
 
 function themeblvd_widget_pack_textdomain() {
-	load_plugin_textdomain( 'themeblvd_widget_pack', false, TB_SIDEBARS_PLUGIN_DIR . '/lang' );
+	load_plugin_textdomain( 'themeblvd_widget_pack', false, TB_WIDGET_PACK_PLUGIN_DIR . '/lang' );
 }
 add_action( 'plugins_loaded', 'themeblvd_widget_pack_textdomain' );
 
