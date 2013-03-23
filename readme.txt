@@ -2,7 +2,7 @@
 Author URI: http://www.jasonbobich.com
 Contributors: themeblvd
 Tags: widgets, Theme Blvd, themeblvd, Jason Bobich
-Stable Tag: 1.0.0
+Stable Tag: 1.0.1
 
 When using a Theme Blvd theme, this plugin adds six widgets to extend some of the functionality already built into the framework.
 
@@ -52,6 +52,10 @@ This widget allows you to select from any menus you've created under *Appearance
 6. Horizontal Menu
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Fixed TB_SIDEBARS_PLUGIN_DIR notice from localization.
 
 = 1.0.0 =
 
