@@ -55,7 +55,7 @@ This widget allows you to select from any menus you've created under *Appearance
 
 = 1.0.2 =
 
-* Added compatibility for WPML with Mini Post List and Mini Post Grid widgets.
+* Added better compatibility for WPML with Mini Post List and Mini Post Grid widgets.
 * Fixed wording in warning when Theme Blvd framework isn't installed, and added "Dismiss" link.
 
 = 1.0.1 =

@@ -81,7 +81,15 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 				<?php 
 				$list = null;
 				$answers = array( 'all' => __( 'All Categories', 'themeblvd_widget_pack' ) );
-				$categories = get_categories();
+				if( isset( $GLOBALS['sitepress'] ) ) {
+					// WPML compat
+					global $sitepress;
+					remove_filter('terms_clauses', array( $sitepress, 'terms_clauses' ));
+					$categories = get_categories( array( 'hide_empty' => false ) );
+					add_filter('terms_clauses', array( $sitepress, 'terms_clauses' ));
+				} else {
+					$categories = get_categories( array( 'hide_empty' => false ) );
+				}
 				foreach( $categories as $current_category ) {
 					$answers[$current_category->slug] = $current_category->name;
 				}
