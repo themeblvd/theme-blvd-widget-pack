@@ -150,6 +150,7 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			$instance['category'] == 'all' ? $category = '' : $category = $instance['category'];
 			$query  = 'category_name='.$category;
 			$query .= '&numberposts='.$instance['numberposts'];
+			$query .= '&suppress_filters=false'; // Mainly for WPML compat
 		}
 		// Widget output
 		echo $before_widget;

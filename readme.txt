@@ -55,6 +55,8 @@ This widget allows you to select from any menus you've created under *Appearance
 
 = 1.0.2 =
 
+* Added compatibility for WPML for Mini Post List and Mini Post Grid widgets.
+
 = 1.0.1 =
 
 * Fixed TB_SIDEBARS_PLUGIN_DIR notice from localization.
