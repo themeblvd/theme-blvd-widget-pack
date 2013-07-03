@@ -50,14 +50,12 @@ function themeblvd_widget_pack_init() {
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-mini-post-grid.php' );
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-mini-post-list.php' );
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-video.php' );
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-twitter.php' );
 
 	// Register Widgets
 	register_widget('TB_Widget_Contact');
 	register_widget('TB_Horz_Menu');
 	register_widget('TB_Widget_Mini_Post_Grid');
 	register_widget('TB_Widget_Mini_Post_List');
-	register_widget('TB_Widget_Twitter');
 	register_widget('TB_Widget_Video');
 
 }

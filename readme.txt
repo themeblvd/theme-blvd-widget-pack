@@ -55,6 +55,8 @@ This widget allows you to select from any menus you've created under *Appearance
 
 = 1.0.3 =
 
+* Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
+
 = 1.0.2 =
 
 * Added better compatibility for WPML with Mini Post List and Mini Post Grid widgets.
