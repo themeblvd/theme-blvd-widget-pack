@@ -1,32 +1,32 @@
 <?php
 /**
  * Theme Blvd Mini Post List Widget
- * 
+ *
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
 
 class TB_Widget_Mini_Post_List extends WP_Widget {
-	
+
 	/* Constructor */
-	
+
 	function __construct() {
 		$widget_ops = array(
-			'classname' => 'tb-mini_post_list_widget', 
+			'classname' => 'tb-mini_post_list_widget',
 			'description' => 'Show list of posts.'
 		);
 		$control_ops = array(
-			'width' => 400, 
+			'width' => 400,
 			'height' => 350
 		);
         $this->WP_Widget( 'themeblvd_mini_post_list_widget', 'Theme Blvd Mini Post List', $widget_ops, $control_ops );
 	}
-	
+
 	/* Widget Options Form */
-	
+
 	function form($instance) {
-		$defaults = array( 
-			'title' => 'Recent Posts', 
+		$defaults = array(
+			'title' => 'Recent Posts',
 			'thumb'	=> 'smaller',
 			'meta' => 'show',
 			'category' => '',
@@ -42,13 +42,13 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 		$query = isset($instance['query']) ? strip_tags($instance['query']): "";
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'themeblvd_widget_pack' ); ?> 
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'themeblvd_widget_pack' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('thumb'); ?>"><?php _e( 'Thumbnail Sizes:', 'themeblvd_widget_pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('thumb'); ?>" name="<?php echo $this->get_field_name('thumb'); ?>">
-				<?php 
+				<?php
 				$list = null;
 				$answers = array( 'small', 'smaller', 'smallest', 'hide' );
 				foreach ( $answers as $answer ) {
@@ -63,7 +63,7 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('meta'); ?>"><?php _e( 'Post Dates:', 'themeblvd_widget_pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('meta'); ?>" name="<?php echo $this->get_field_name('meta'); ?>">
-				<?php 
+				<?php
 				$list = null;
 				$answers = array( 'show', 'hide' );
 				foreach ( $answers as $answer ) {
@@ -78,7 +78,7 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e( 'Category:', 'themeblvd_widget_pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('category'); ?>" name="<?php echo $this->get_field_name('category'); ?>">
-				<?php 
+				<?php
 				$list = null;
 				$answers = array( 'all' => __( 'All Categories', 'themeblvd_widget_pack' ) );
 				if( isset( $GLOBALS['sitepress'] ) ) {
@@ -103,9 +103,9 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e( 'Number of Posts:', 'themeblvd_widget_pack' ); ?> 
+			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e( 'Number of Posts:', 'themeblvd_widget_pack' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('numberposts'); ?>" name="<?php echo $this->get_field_name('numberposts'); ?>" type="text" value="<?php echo esc_attr($numberposts); ?>" /></label>
-		</p>		
+		</p>
 		<div style="border: 1px solid #cccccc; margin: 0 0 5px 0; padding: 8px;">
 			<p>
 				<label for="<?php echo $this->get_field_id('query'); ?>"><strong><?php _e( 'Custom query string (optional)', 'themeblvd_widget_pack' ); ?></strong>
@@ -119,11 +119,11 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 				Example: "tag=whatever&numberposts=5&offset=1"
 			</p>
 		</div>
-		<?php	
+		<?php
 	}
-	
+
 	/* Update Widget Settings */
-	
+
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -134,11 +134,11 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
         $instance['query'] = strip_tags($new_instance['query']);
         return $instance;
 	}
-	
+
 	/* Display Widget */
-	
+
 	function widget($args, $instance) {
-		extract($args, EXTR_SKIP);		
+		extract($args, EXTR_SKIP);
 		// Title
 		$title = $instance['title'];
 		// Thumb
@@ -158,7 +158,7 @@ class TB_Widget_Mini_Post_List extends WP_Widget {
 		echo $before_widget;
 		if ( $title ) echo $before_title.$title.$after_title;
 		echo themeblvd_get_mini_post_list( $query, $thumb, $meta );
-		echo $after_widget;	
+		echo $after_widget;
 	}
 
 }

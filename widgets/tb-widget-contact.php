@@ -1,29 +1,29 @@
 <?php
 /**
  * Theme Blvd Simple Contact Widget
- * 
+ *
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
 
 class TB_Widget_Contact extends WP_Widget {
-	
+
 	/* Constructor */
-	
+
 	function __construct() {
 		$widget_ops = array(
-			'classname' => 'tb-contact_widget', 
+			'classname' => 'tb-contact_widget',
 			'description' => 'Display some basic contact information.'
 		);
 		$control_ops = array(
-			'width' => 400, 
+			'width' => 400,
 			'height' => 350
 		);
         $this->WP_Widget( 'themeblvd_contact_widget', 'Theme Blvd Simple Contact', $widget_ops, $control_ops );
 	}
-	
+
 	/* Widget Options Form */
-	
+
 	function form($instance) {
 		$defaults = array(
 			'title' => '',
@@ -112,7 +112,7 @@ class TB_Widget_Contact extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('skype'); ?>"><?php _e('Skype Username:', 'themeblvd_widget_pack'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('skype'); ?>" name="<?php echo $this->get_field_name('skype'); ?>" type="text" value="<?php echo esc_attr($instance['skype']); ?>" />
 		</p>
-		
+
 		<h4><?php _e( 'Icon Links', 'themeblvd_widget_pack' ); ?></h4>
 		<div style="border: 1px solid #cccccc; margin: 0 0 5px 0; padding: 8px;">
 			<p>
@@ -123,7 +123,7 @@ class TB_Widget_Contact extends WP_Widget {
 					<?php endforeach; ?>
 				</select>
 			</p>
-			<p>	
+			<p>
 				<label for="<?php echo $this->get_field_id('link_1_url'); ?>"><?php _e('Link #1 URL:', 'themeblvd_widget_pack'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('link_1_url'); ?>" name="<?php echo $this->get_field_name('link_1_url'); ?>" type="text" value="<?php echo esc_attr($instance['link_1_url']); ?>" />
 			</p>
@@ -137,7 +137,7 @@ class TB_Widget_Contact extends WP_Widget {
 					<?php endforeach; ?>
 				</select>
 			</p>
-			<p>	
+			<p>
 				<label for="<?php echo $this->get_field_id('link_2_url'); ?>"><?php _e('Link #2 URL:', 'themeblvd_widget_pack'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('link_2_url'); ?>" name="<?php echo $this->get_field_name('link_2_url'); ?>" type="text" value="<?php echo esc_attr($instance['link_2_url']); ?>" />
 			</p>
@@ -151,7 +151,7 @@ class TB_Widget_Contact extends WP_Widget {
 					<?php endforeach; ?>
 				</select>
 			</p>
-			<p>	
+			<p>
 				<label for="<?php echo $this->get_field_id('link_3_url'); ?>"><?php _e('Link #3 URL:', 'themeblvd_widget_pack'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('link_3_url'); ?>" name="<?php echo $this->get_field_name('link_3_url'); ?>" type="text" value="<?php echo esc_attr($instance['link_3_url']); ?>" />
 			</p>
@@ -165,7 +165,7 @@ class TB_Widget_Contact extends WP_Widget {
 					<?php endforeach; ?>
 				</select>
 			</p>
-			<p>	
+			<p>
 				<label for="<?php echo $this->get_field_id('link_4_url'); ?>"><?php _e('Link #4 URL:', 'themeblvd_widget_pack'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('link_4_url'); ?>" name="<?php echo $this->get_field_name('link_4_url'); ?>" type="text" value="<?php echo esc_attr($instance['link_4_url']); ?>" />
 			</p>
@@ -179,7 +179,7 @@ class TB_Widget_Contact extends WP_Widget {
 					<?php endforeach; ?>
 				</select>
 			</p>
-			<p>	
+			<p>
 				<label for="<?php echo $this->get_field_id('link_5_url'); ?>"><?php _e('Link #5 URL:', 'themeblvd_widget_pack'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('link_5_url'); ?>" name="<?php echo $this->get_field_name('link_5_url'); ?>" type="text" value="<?php echo esc_attr($instance['link_5_url']); ?>" />
 			</p>
@@ -193,16 +193,16 @@ class TB_Widget_Contact extends WP_Widget {
 					<?php endforeach; ?>
 				</select>
 			</p>
-			<p>	
+			<p>
 				<label for="<?php echo $this->get_field_id('link_6_url'); ?>"><?php _e('Link #6 URL:', 'themeblvd_widget_pack'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('link_6_url'); ?>" name="<?php echo $this->get_field_name('link_6_url'); ?>" type="text" value="<?php echo esc_attr($instance['link_6_url']); ?>" />
 			</p>
 		</div>
         <?php
 	}
-	
+
 	/* Update Widget Settings */
-	
+
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -226,9 +226,9 @@ class TB_Widget_Contact extends WP_Widget {
         $instance['link_6_url'] = strip_tags($new_instance['link_6_url']);
         return $instance;
 	}
-	
+
 	/* Display Widget */
-	
+
 	function widget($args, $instance) {
 		extract( $args );
 		echo $before_widget;
@@ -236,7 +236,7 @@ class TB_Widget_Contact extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 		echo themeblvd_get_simple_contact( $instance );
-		echo $after_widget;		
+		echo $after_widget;
 	}
 
 }

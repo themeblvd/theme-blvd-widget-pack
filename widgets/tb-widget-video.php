@@ -1,29 +1,29 @@
 <?php
 /**
  * Theme Blvd Video Widget
- * 
+ *
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
 
 class TB_Widget_Video extends WP_Widget {
-	
+
 	/* Constructor */
-	
+
 	function __construct() {
 		$widget_ops = array(
-			'classname' => 'tb-video_widget', 
+			'classname' => 'tb-video_widget',
 			'description' => 'Quickly embed a video with WordPress\'s built-in oEmbed.'
 		);
 		$control_ops = array(
-			'width' => 400, 
+			'width' => 400,
 			'height' => 350
 		);
         $this->WP_Widget( 'themeblvd_video_widget', 'Theme Blvd Video', $widget_ops, $control_ops );
 	}
-	
+
 	/* Widget Options Form */
-	
+
 	function form($instance) {
 		$defaults = array(
 			'title' => '',
@@ -48,9 +48,9 @@ class TB_Widget_Video extends WP_Widget {
 		</p>
         <?php
 	}
-	
+
 	/* Update Widget Settings */
-	
+
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -58,9 +58,9 @@ class TB_Widget_Video extends WP_Widget {
         $instance['description'] = stripslashes($new_instance['description']);
         return $instance;
 	}
-	
+
 	/* Display Widget */
-	
+
 	function widget($args, $instance) {
 		extract( $args );
 		echo $before_widget;
@@ -75,7 +75,7 @@ class TB_Widget_Video extends WP_Widget {
 		echo wp_oembed_get( $instance['video_url'] );
 		if( $instance['description'] )
 			echo '<span class="tb-video_description">'.$instance['description'].'</span>';
-		echo $after_widget;		
+		echo $after_widget;
 	}
 
 }

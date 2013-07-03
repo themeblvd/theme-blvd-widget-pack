@@ -1,32 +1,32 @@
 <?php
 /**
  * Theme Blvd Mini Post Grid Widget
- * 
+ *
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
 
 class TB_Widget_Mini_Post_Grid extends WP_Widget {
-	
+
 	/* Constructor */
-	
+
 	function __construct() {
 		$widget_ops = array(
-			'classname' => 'tb-mini_post_grid_widget', 
+			'classname' => 'tb-mini_post_grid_widget',
 			'description' => 'Show grid of posts or images from gallery.'
 		);
 		$control_ops = array(
-			'width' => 400, 
+			'width' => 400,
 			'height' => 350
 		);
         $this->WP_Widget( 'themeblvd_mini_post_grid_widget', 'Theme Blvd Mini Post Grid', $widget_ops, $control_ops );
 	}
-	
+
 	/* Widget Options Form */
-	
+
 	function form($instance) {
-		$defaults = array( 
-			'title' => 'Recent Posts', 
+		$defaults = array(
+			'title' => 'Recent Posts',
 			'thumb'	=> 'smaller',
 			'align' => 'left',
 			'category' => '',
@@ -44,13 +44,13 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		$gallery = isset($instance['gallery']) ? strip_tags($instance['gallery']): "";
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'themeblvd_widget_pack' ); ?> 
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'themeblvd_widget_pack' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('thumb'); ?>"><?php _e( 'Thumbnail Sizes:', 'themeblvd_widget_pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('thumb'); ?>" name="<?php echo $this->get_field_name('thumb'); ?>">
-				<?php 
+				<?php
 				$list = null;
 				$answers = array( 'small', 'smaller', 'smallest' );
 				foreach ( $answers as $answer ) {
@@ -65,7 +65,7 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('align'); ?>"><?php _e( 'Thumbnail Alignment:', 'themeblvd_widget_pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('align'); ?>" name="<?php echo $this->get_field_name('align'); ?>">
-				<?php 
+				<?php
 				$list = null;
 				$answers = array( 'left', 'right', 'center' );
 				foreach ( $answers as $answer ) {
@@ -80,7 +80,7 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e( 'Category:', 'themeblvd_widget_pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('category'); ?>" name="<?php echo $this->get_field_name('category'); ?>">
-				<?php 
+				<?php
 				$list = null;
 				$answers = array( 'all' => __( 'All Categories', 'themeblvd_widget_pack' ) );
 				if( isset( $GLOBALS['sitepress'] ) ) {
@@ -105,9 +105,9 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e( 'Number of Posts:', 'themeblvd_widget_pack' ); ?> 
+			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e( 'Number of Posts:', 'themeblvd_widget_pack' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('numberposts'); ?>" name="<?php echo $this->get_field_name('numberposts'); ?>" type="text" value="<?php echo esc_attr($numberposts); ?>" /></label>
-		</p>		
+		</p>
 		<div style="border: 1px solid #cccccc; margin: 0 0 5px 0; padding: 8px;">
 			<p>
 				<label for="<?php echo $this->get_field_id('query'); ?>"><strong><?php _e( 'Custom query string (optional)', 'themeblvd_widget_pack' ); ?></strong>
@@ -129,11 +129,11 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			<p><?php _e( 'Enter the numerical ID of the post or page you want to pull attachmetns from.', 'themeblvd_widget_pack' ); ?></p>
 			<p><?php _e( 'If you enter anything here, your category selection, number of posts selection, and custom query options will all be ignored.', 'themeblvd_widget_pack' ); ?></p>
 		</div>
-		<?php	
+		<?php
 	}
-	
+
 	/* Update Widget Settings */
-	
+
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -145,11 +145,11 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
         $instance['gallery'] = strip_tags($new_instance['gallery']);
         return $instance;
 	}
-	
+
 	/* Display Widget */
-	
+
 	function widget($args, $instance) {
-		extract($args, EXTR_SKIP);		
+		extract($args, EXTR_SKIP);
 		// Title
 		$title = $instance['title'];
 		// Build query
@@ -164,7 +164,7 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		echo $before_widget;
 		if ( $title ) echo $before_title.$title.$after_title;
 		echo themeblvd_get_mini_post_grid( $query, $instance['align'], $instance['thumb'], $instance['gallery'] );
-		echo $after_widget;	
+		echo $after_widget;
 	}
 
 }
