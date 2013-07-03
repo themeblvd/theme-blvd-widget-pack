@@ -1,14 +1,13 @@
 <?php
 /*
 Plugin Name: Theme Blvd Widget Pack
-Plugin URI: 
 Description: This plugin adds a pack of widgets that work with the Theme Blvd framework.
-Version: 1.0.2
-Author: Jason Bobich
-Author URI: http://jasonbobich.com
+Version: 1.0.3
+Author: Theme Blvd
+Author URI: http://themeblvd.com
 License: GPL2
 
-    Copyright 2012  Jason Bobich
+    Copyright 2013  Jason Bobich
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License version 2,
@@ -26,8 +25,8 @@ License: GPL2
 
 */
 
-define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.2' );
-define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) ); 
+define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.3' );
+define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
 define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
 
 /**
@@ -37,14 +36,14 @@ define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
  */
 
 function themeblvd_widget_pack_init() {
-	
+
 	// Check to make sure Theme Blvd Framework 2.2+ is running
 	if( ! defined( 'TB_FRAMEWORK_VERSION' ) || version_compare( TB_FRAMEWORK_VERSION, '2.2.0', '<' ) ) {
 		add_action( 'admin_notices', 'themeblvd_widget_pack_warning' );
 		add_action( 'admin_init', 'themeblvd_widget_pack_disable_nag' );
 		return;
 	}
-	
+
 	// Include widgets
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-contact.php' );
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-horz-nav.php' );
@@ -52,7 +51,7 @@ function themeblvd_widget_pack_init() {
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-mini-post-list.php' );
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-video.php' );
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-twitter.php' );
-	
+
 	// Register Widgets
 	register_widget('TB_Widget_Contact');
 	register_widget('TB_Horz_Menu');
@@ -60,7 +59,7 @@ function themeblvd_widget_pack_init() {
 	register_widget('TB_Widget_Mini_Post_List');
 	register_widget('TB_Widget_Twitter');
 	register_widget('TB_Widget_Video');
-	
+
 }
 add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
 
@@ -76,8 +75,8 @@ function themeblvd_widget_pack_textdomain() {
 add_action( 'plugins_loaded', 'themeblvd_widget_pack_textdomain' );
 
 /**
- * Display warning telling the user they must have a 
- * theme with Theme Blvd framework v2.2+ installed in 
+ * Display warning telling the user they must have a
+ * theme with Theme Blvd framework v2.2+ installed in
  * order to run this plugin.
  *
  * @since 1.0.0

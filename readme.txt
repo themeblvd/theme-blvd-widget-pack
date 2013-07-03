@@ -1,8 +1,8 @@
 === Theme Blvd Widget Pack ===
-Author URI: http://www.jasonbobich.com
+Author URI: http://www.themeblvd.com
 Contributors: themeblvd
 Tags: widgets, Theme Blvd, themeblvd, Jason Bobich
-Stable Tag: 1.0.2
+Stable Tag: 1.0.3
 
 When using a Theme Blvd theme, this plugin adds six widgets to extend some of the functionality already built into the framework.
 
@@ -18,7 +18,7 @@ This widget utilizes the theme framework's post grid system to display a grid of
 
 This widget utilizes the theme framework's post list system to display a simple list of post titles and their associated featured images. Standard framework featured image link settings will be utilized here and the posts used for the list can queried in different ways.
 
-= Simple Contact = 
+= Simple Contact =
 
 This widget provides you with some standard contact information you can fill out. Additionally you can setup a 1-6 icons linking to your relevant social networks; the 30 standard social network icons are included as possible selections for each.
 
@@ -52,6 +52,8 @@ This widget allows you to select from any menus you've created under *Appearance
 6. Horizontal Menu
 
 == Changelog ==
+
+= 1.0.3 =
 
 = 1.0.2 =
 
