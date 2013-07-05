@@ -7,7 +7,7 @@ Author: Theme Blvd
 Author URI: http://themeblvd.com
 License: GPL2
 
-    Copyright 2013  Jason Bobich
+    Copyright 2013  Theme Blvd
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License version 2,
@@ -25,17 +25,25 @@ License: GPL2
 
 */
 
-define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.3' );
-define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
-define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
+// Avoid potential conflicts on activation with Bundle.
+if ( !defined( 'TB_WIDGET_PACK_PLUGIN_VERSION' ) ) {
 
+	define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.3' );
+	define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
+	define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
+
+}
+
+if ( !function_exists( 'themeblvd_widget_pack_init' ) ) : // Avoid activation errors with Bundle
 /**
  * Run Widget Pack
  *
  * @since 1.0.0
  */
-
 function themeblvd_widget_pack_init() {
+
+	// Include general functions
+	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/general.php' );
 
 	// Check to make sure Theme Blvd Framework 2.2+ is running
 	if( ! defined( 'TB_FRAMEWORK_VERSION' ) || version_compare( TB_FRAMEWORK_VERSION, '2.2.0', '<' ) ) {
@@ -45,11 +53,11 @@ function themeblvd_widget_pack_init() {
 	}
 
 	// Include widgets
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-contact.php' );
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-horz-nav.php' );
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-mini-post-grid.php' );
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-mini-post-list.php' );
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/widgets/tb-widget-video.php' );
+	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-contact.php' );
+	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-horz-nav.php' );
+	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-mini-post-grid.php' );
+	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-mini-post-list.php' );
+	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-video.php' );
 
 	// Register Widgets
 	register_widget('TB_Widget_Contact');
@@ -60,45 +68,16 @@ function themeblvd_widget_pack_init() {
 
 }
 add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
+endif;
 
+if ( !function_exists( 'themeblvd_widget_pack_textdomain' ) ) : // Avoid activation errors with Bundle
 /**
  * Register text domain for localization.
  *
  * @since 1.0.0
  */
-
 function themeblvd_widget_pack_textdomain() {
 	load_plugin_textdomain( 'themeblvd_widget_pack', false, TB_WIDGET_PACK_PLUGIN_DIR . '/lang' );
 }
 add_action( 'plugins_loaded', 'themeblvd_widget_pack_textdomain' );
-
-/**
- * Display warning telling the user they must have a
- * theme with Theme Blvd framework v2.2+ installed in
- * order to run this plugin.
- *
- * @since 1.0.0
- */
-
-function themeblvd_widget_pack_warning() {
-	global $current_user;
-	// DEBUG: delete_user_meta( $current_user->ID, 'tb_widget_pack_no_framework' )
-	if( ! get_user_meta( $current_user->ID, 'tb_widget_pack_no_framework' ) ){
-		echo '<div class="updated">';
-		echo '<p>'.__( 'You currently have the "Theme Blvd Widget Pack" plugin activated, however you are not using a theme with Theme Blvd Framework v2.2+, and so this plugin will not do anything.', 'themeblvd_widget_pack' ).'</p>';
-		echo '<p><a href="?tb_nag_ignore=tb_widget_pack_no_framework">'.__('Dismiss this notice', 'themeblvd_shortcodes').'</a> | <a href="http://www.themeblvd.com" target="_blank">'.__('Visit ThemeBlvd.com', 'themeblvd_widget_pack').'</a></p>';
-		echo '</div>';
-	}
-}
-
-/**
- * Dismiss an admin notice.
- *
- * @since 1.0.2
- */
-
-function themeblvd_widget_pack_disable_nag() {
-	global $current_user;
-    if ( isset( $_GET['tb_nag_ignore'] ) )
-         add_user_meta( $current_user->ID, $_GET['tb_nag_ignore'], 'true', true );
-}
+endif;

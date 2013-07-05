@@ -56,6 +56,7 @@ This widget allows you to select from any menus you've created under *Appearance
 = 1.0.3 =
 
 * Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
+* Fixed any conflicts when activated with [Theme Blvd Bundle](http://wordpress.org/extend/plugins/theme-blvd-bundle).
 
 = 1.0.2 =
 
