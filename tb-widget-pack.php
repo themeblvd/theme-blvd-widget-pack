@@ -25,16 +25,10 @@ License: GPL2
 
 */
 
-// Avoid potential conflicts on activation with Bundle.
-if ( !defined( 'TB_WIDGET_PACK_PLUGIN_VERSION' ) ) {
+define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.3' );
+define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
+define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
 
-	define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.3' );
-	define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
-	define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
-
-}
-
-if ( !function_exists( 'themeblvd_widget_pack_init' ) ) : // Avoid activation errors with Bundle
 /**
  * Run Widget Pack
  *
@@ -68,9 +62,7 @@ function themeblvd_widget_pack_init() {
 
 }
 add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
-endif;
 
-if ( !function_exists( 'themeblvd_widget_pack_textdomain' ) ) : // Avoid activation errors with Bundle
 /**
  * Register text domain for localization.
  *
@@ -80,4 +72,3 @@ function themeblvd_widget_pack_textdomain() {
 	load_plugin_textdomain( 'themeblvd_widget_pack', false, TB_WIDGET_PACK_PLUGIN_DIR . '/lang' );
 }
 add_action( 'plugins_loaded', 'themeblvd_widget_pack_textdomain' );
-endif;
