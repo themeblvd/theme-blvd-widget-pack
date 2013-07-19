@@ -126,7 +126,8 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 				<label for="<?php echo $this->get_field_id('gallery'); ?>"><strong><?php _e( 'Gallery override (optional)', 'themeblvd_widget_pack' ); ?></strong>
 				<input class="widefat" id="<?php echo $this->get_field_id('gallery'); ?>" name="<?php echo $this->get_field_name('gallery'); ?>" type="text" value="<?php echo esc_attr($gallery); ?>" /></label>
 			</p>
-			<p><?php _e( 'Enter the numerical ID of the post or page you want to pull attachmetns from.', 'themeblvd_widget_pack' ); ?></p>
+			<p><?php _e( 'Use the [gallery] shortcode here to display a gallery of images for the mini post grid. Only "link" and "ids" parameters are used here.', 'themeblvd_widget_pack' ); ?></p>
+			<p>Example: [gallery link="file" ids="1,2,3"]</p>
 			<p><?php _e( 'If you enter anything here, your category selection, number of posts selection, and custom query options will all be ignored.', 'themeblvd_widget_pack' ); ?></p>
 		</div>
 		<?php

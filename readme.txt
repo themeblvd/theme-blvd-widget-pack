@@ -57,6 +57,7 @@ This widget allows you to select from any menus you've created under *Appearance
 
 * Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
 * Fixed any conflicts when activated with [Theme Blvd Bundle](http://wordpress.org/extend/plugins/theme-blvd-bundle).
+* Mini Post Grid widget now accepts `[gallery]` shortcode usage for the Gallery Override feature. -- i.e. `[gallery link="file" ids="1,2,3"]`
 
 = 1.0.2 =
 
