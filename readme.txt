@@ -22,10 +22,6 @@ This widget utilizes the theme framework's post list system to display a simple 
 
 This widget provides you with some standard contact information you can fill out. Additionally you can setup a 1-6 icons linking to your relevant social networks; the 30 standard social network icons are included as possible selections for each.
 
-= Twitter =
-
-Nothing unique here. This widget will allow you to utilize the framework's internal system for pulling a list of tweets from your desired Twitter account. Tweets are cached and updated every two hours.
-
 = Video =
 
 This widget will allow you to display any video compatible with WordPress's [oEmbed system](http://codex.wordpress.org/Embeds). When using this widget, you can take advantage of the fact that any video inserted via oEmbed with a Theme Blvd theme is responsive; this will allow your sidebar's video to scale down gracefully with the rest of your website.
