@@ -47,16 +47,14 @@ This widget allows you to select from any menus you've created under *Appearance
 1. Mini Post Grid
 2. Mini Post List
 3. Simple Contact
-4. Twitter
-5. Video
-6. Horizontal Menu
+4. Video
+5. Horizontal Menu
 
 == Changelog ==
 
 = 1.0.3 =
 
 * Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
-* Fixed any conflicts when activated with [Theme Blvd Bundle](http://wordpress.org/extend/plugins/theme-blvd-bundle).
 * Mini Post Grid widget now accepts `[gallery]` shortcode usage for the Gallery Override feature. -- i.e. `[gallery link="file" ids="1,2,3"]`
 
 = 1.0.2 =
