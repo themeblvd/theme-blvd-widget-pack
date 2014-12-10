@@ -13,7 +13,7 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 	function __construct() {
 		$widget_ops = array(
 			'classname' => 'tb-mini_post_grid_widget',
-			'description' => 'Show grid of posts or images from gallery.'
+			'description' => __('Show grid of posts or images from gallery.', 'theme-blvd-widget-pack')
 		);
 		$control_ops = array(
 			'width' => 400,
@@ -44,11 +44,11 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		$gallery = isset($instance['gallery']) ? strip_tags($instance['gallery']): "";
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'themeblvd_widget_pack' ); ?>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'theme-blvd-widget-pack' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('thumb'); ?>"><?php _e( 'Thumbnail Sizes:', 'themeblvd_widget_pack' ); ?> </label>
+			<label for="<?php echo $this->get_field_id('thumb'); ?>"><?php _e( 'Thumbnail Sizes:', 'theme-blvd-widget-pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('thumb'); ?>" name="<?php echo $this->get_field_name('thumb'); ?>">
 				<?php
 				$list = null;
@@ -63,7 +63,7 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('align'); ?>"><?php _e( 'Thumbnail Alignment:', 'themeblvd_widget_pack' ); ?> </label>
+			<label for="<?php echo $this->get_field_id('align'); ?>"><?php _e( 'Thumbnail Alignment:', 'theme-blvd-widget-pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('align'); ?>" name="<?php echo $this->get_field_name('align'); ?>">
 				<?php
 				$list = null;
@@ -78,11 +78,11 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e( 'Category:', 'themeblvd_widget_pack' ); ?> </label>
+			<label for="<?php echo $this->get_field_id('category'); ?>"><?php _e( 'Category:', 'theme-blvd-widget-pack' ); ?> </label>
 			<select class="widefat" id="<?php echo $this->get_field_id('category'); ?>" name="<?php echo $this->get_field_name('category'); ?>">
 				<?php
 				$list = null;
-				$answers = array( 'all' => __( 'All Categories', 'themeblvd_widget_pack' ) );
+				$answers = array( 'all' => __( 'All Categories', 'theme-blvd-widget-pack' ) );
 				if( isset( $GLOBALS['sitepress'] ) ) {
 					// WPML compat
 					global $sitepress;
@@ -105,16 +105,16 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e( 'Number of Posts:', 'themeblvd_widget_pack' ); ?>
+			<label for="<?php echo $this->get_field_id('numberposts'); ?>"><?php _e( 'Number of Posts:', 'theme-blvd-widget-pack' ); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id('numberposts'); ?>" name="<?php echo $this->get_field_name('numberposts'); ?>" type="text" value="<?php echo esc_attr($numberposts); ?>" /></label>
 		</p>
 		<div style="border: 1px solid #cccccc; margin: 0 0 5px 0; padding: 8px;">
 			<p>
-				<label for="<?php echo $this->get_field_id('query'); ?>"><strong><?php _e( 'Custom query string (optional)', 'themeblvd_widget_pack' ); ?></strong>
+				<label for="<?php echo $this->get_field_id('query'); ?>"><strong><?php _e( 'Custom query string (optional)', 'theme-blvd-widget-pack' ); ?></strong>
 				<input class="widefat" id="<?php echo $this->get_field_id('query'); ?>" name="<?php echo $this->get_field_name('query'); ?>" type="text" value="<?php echo esc_attr($query); ?>" /></label>
 			</p>
-			<p><?php _e( 'Here you can enter in a custom query string formatted for WordPress\'s <a href="http://codex.wordpress.org/Template_Tags/get_posts" target="_blank">get_posts</a>.', 'themeblvd_widget_pack' ); ?></p>
-			<p><?php _e( 'If you enter anything here, your category selection and number of posts selection above will be ignored.', 'themeblvd_widget_pack' ); ?></p>
+			<p><?php _e( 'Here you can enter in a custom query string formatted for WordPress\'s <a href="http://codex.wordpress.org/Template_Tags/get_posts" target="_blank">get_posts</a>.', 'theme-blvd-widget-pack' ); ?></p>
+			<p><?php _e( 'If you enter anything here, your category selection and number of posts selection above will be ignored.', 'theme-blvd-widget-pack' ); ?></p>
 			<p>
 				Example: "tag=whatever"<br>
 				Example: "tag=whatever&category_name=portfolio"<br>
@@ -123,12 +123,12 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		</div>
 		<div style="border: 1px solid #cccccc; margin: 0 0 5px 0; padding: 8px;">
 			<p>
-				<label for="<?php echo $this->get_field_id('gallery'); ?>"><strong><?php _e( 'Gallery override (optional)', 'themeblvd_widget_pack' ); ?></strong>
+				<label for="<?php echo $this->get_field_id('gallery'); ?>"><strong><?php _e( 'Gallery override (optional)', 'theme-blvd-widget-pack' ); ?></strong>
 				<input class="widefat" id="<?php echo $this->get_field_id('gallery'); ?>" name="<?php echo $this->get_field_name('gallery'); ?>" type="text" value="<?php echo esc_attr($gallery); ?>" /></label>
 			</p>
-			<p><?php _e( 'Use the [gallery] shortcode here to display a gallery of images for the mini post grid. Only "link" and "ids" parameters are used here.', 'themeblvd_widget_pack' ); ?></p>
+			<p><?php _e( 'Use the [gallery] shortcode here to display a gallery of images for the mini post grid. Only "link" and "ids" parameters are used here.', 'theme-blvd-widget-pack' ); ?></p>
 			<p>Example: [gallery link="file" ids="1,2,3"]</p>
-			<p><?php _e( 'If you enter anything here, your category selection, number of posts selection, and custom query options will all be ignored.', 'themeblvd_widget_pack' ); ?></p>
+			<p><?php _e( 'If you enter anything here, your category selection, number of posts selection, and custom query options will all be ignored.', 'theme-blvd-widget-pack' ); ?></p>
 		</div>
 		<?php
 	}

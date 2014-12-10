@@ -69,6 +69,6 @@ add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
  * @since 1.0.0
  */
 function themeblvd_widget_pack_textdomain() {
-	load_plugin_textdomain( 'themeblvd_widget_pack', false, TB_WIDGET_PACK_PLUGIN_DIR . '/lang' );
+	load_plugin_textdomain('theme-blvd-widget-pack');
 }
-add_action( 'plugins_loaded', 'themeblvd_widget_pack_textdomain' );
+add_action( 'init', 'themeblvd_widget_pack_textdomain' );

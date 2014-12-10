@@ -49,6 +49,8 @@ This widget allows you to select from any menus you've created under *Appearance
 
 = 1.0.4 =
 
+* GlotPress compatibility (for 2015 wordpress.org release).
+
 = 1.0.3 =
 
 * Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.

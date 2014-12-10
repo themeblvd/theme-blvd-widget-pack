@@ -12,8 +12,8 @@ function themeblvd_widget_pack_warning() {
 	// DEBUG: delete_user_meta( $current_user->ID, 'tb_widget_pack_no_framework' )
 	if( ! get_user_meta( $current_user->ID, 'tb_widget_pack_no_framework' ) ){
 		echo '<div class="updated">';
-		echo '<p>'.__( 'You currently have the "Theme Blvd Widget Pack" plugin activated, however you are not using a theme with Theme Blvd Framework v2.2+, and so this plugin will not do anything.', 'themeblvd_widget_pack' ).'</p>';
-		echo '<p><a href="?tb_nag_ignore=tb_widget_pack_no_framework">'.__('Dismiss this notice', 'themeblvd_shortcodes').'</a> | <a href="http://www.themeblvd.com" target="_blank">'.__('Visit ThemeBlvd.com', 'themeblvd_widget_pack').'</a></p>';
+		echo '<p>'.__( 'You currently have the "Theme Blvd Widget Pack" plugin activated, however you are not using a theme with Theme Blvd Framework v2.2+, and so this plugin will not do anything.', 'theme-blvd-widget-pack' ).'</p>';
+		echo '<p><a href="?tb_nag_ignore=tb_widget_pack_no_framework">'.__('Dismiss this notice', 'theme-blvd-widget-pack').'</a> | <a href="http://www.themeblvd.com" target="_blank">'.__('Visit ThemeBlvd.com', 'theme-blvd-widget-pack').'</a></p>';
 		echo '</div>';
 	}
 }

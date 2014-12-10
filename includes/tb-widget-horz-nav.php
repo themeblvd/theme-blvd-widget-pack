@@ -13,7 +13,7 @@ class TB_Horz_Menu extends WP_Widget {
 	function __construct() {
 		$widget_ops = array(
 			'classname' => 'tb-horz_menu_widget',
-			'description' => 'Display a custom menu in a collapsible widget area that displays horizontally such as the "Ads Above Content" widget area.'
+			'description' => __('Display a custom menu in a collapsible widget area that displays horizontally such as the "Ads Above Content" widget area.', 'theme-blvd-widget-pack')
 		);
         $this->WP_Widget( 'themeblvd_horz_menu_widget', 'Theme Blvd Horizontal Menu', $widget_ops );
 	}
