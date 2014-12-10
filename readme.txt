@@ -4,7 +4,7 @@ Contributors: themeblvd
 Tags: widgets, Theme Blvd, themeblvd, Jason Bobich
 Stable Tag: 1.0.4
 
-When using a Theme Blvd theme, this plugin adds six widgets to extend some of the functionality already built into the framework.
+When using a Theme Blvd theme, this plugin adds a few widgets to extend some of the functionality already built into the framework.
 
 == Description ==
 
@@ -40,11 +40,10 @@ This widget allows you to select from any menus you've created under *Appearance
 
 == Screenshots ==
 
-1. Mini Post Grid
-2. Mini Post List
-3. Simple Contact
-4. Video
-5. Horizontal Menu
+1. Simple Contact Widget used with [Alyeska WordPress Theme](http://themeforest.net/item/alyeska-responsive-wordpress-theme/164366?ref=ThemeBlvd)
+2. Mini Post Grid Widget used with [Swagger WordPress Theme](http://themeforest.net/item/swagger-responsive-wordpress-theme/930581?ref=ThemeBlvd)
+2. Mini Post List Widget used with [Akita WordPress Theme](http://themeforest.net/item/akita-responsive-wordpress-theme/1530025?ref=ThemeBlvd)
+3. Video Widget used with [Swagger WordPress Theme](http://themeforest.net/item/swagger-responsive-wordpress-theme/930581?ref=ThemeBlvd)
 
 == Changelog ==
 
