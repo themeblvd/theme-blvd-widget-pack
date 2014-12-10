@@ -50,6 +50,7 @@ This widget allows you to select from any menus you've created under *Appearance
 = 1.0.4 =
 
 * GlotPress compatibility (for 2015 wordpress.org release).
+* Minor security fix.
 
 = 1.0.3 =
 
