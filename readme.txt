@@ -49,6 +49,8 @@ This widget allows you to select from any menus you've created under *Appearance
 
 = 1.0.5 =
 
+* Fixed: WordPress 4.3 deprecated PHP4 style constructors.
+
 = 1.0.4 =
 
 * GlotPress compatibility (for 2015 wordpress.org release).

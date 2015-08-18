@@ -5,12 +5,12 @@
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
-
 class TB_Widget_Mini_Post_Grid extends WP_Widget {
 
-	/* Constructor */
-
-	function __construct() {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'tb-mini_post_grid_widget',
 			'description' => __('Show grid of posts or images from gallery.', 'theme-blvd-widget-pack')
@@ -19,12 +19,13 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 			'width' => 400,
 			'height' => 350
 		);
-        $this->WP_Widget( 'themeblvd_mini_post_grid_widget', 'Theme Blvd Mini Post Grid', $widget_ops, $control_ops );
+        parent::__construct( 'themeblvd_mini_post_grid_widget', 'Theme Blvd Mini Post Grid', $widget_ops, $control_ops );
 	}
 
-	/* Widget Options Form */
-
-	function form($instance) {
+	/**
+	 * Widget Options Form
+	 */
+	public function form($instance) {
 		$defaults = array(
 			'title' => 'Recent Posts',
 			'thumb'	=> 'smaller',
@@ -133,9 +134,10 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		<?php
 	}
 
-	/* Update Widget Settings */
-
-	function update($new_instance, $old_instance) {
+	/**
+	 * Update Widget Settings
+	 */
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['thumb'] = strip_tags($new_instance['thumb']);
@@ -147,14 +149,19 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
         return $instance;
 	}
 
-	/* Display Widget */
+	/**
+	 * Display Widget
+	 */
+	public function widget($args, $instance) {
 
-	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
+
 		// Title
 		$title = $instance['title'];
+
 		// Build query
 		$query = $instance['query'];
+
 		if( ! $query ) {
 			$instance['category'] == 'all' ? $category = '' : $category = $instance['category'];
 			$query  = 'category_name='.$category;
@@ -163,7 +170,11 @@ class TB_Widget_Mini_Post_Grid extends WP_Widget {
 		}
 		// Widget output
 		echo $before_widget;
-		if ( $title ) echo $before_title.$title.$after_title;
+
+		if ( $title ) {
+			echo $before_title.$title.$after_title;
+		}
+
 		echo themeblvd_get_mini_post_grid( $query, $instance['align'], $instance['thumb'], $instance['gallery'] );
 		echo $after_widget;
 	}

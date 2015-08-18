@@ -5,22 +5,23 @@
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
-
 class TB_Horz_Menu extends WP_Widget {
 
-	/* Constructor */
-
-	function __construct() {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'tb-horz_menu_widget',
 			'description' => __('Display a custom menu in a collapsible widget area that displays horizontally such as the "Ads Above Content" widget area.', 'theme-blvd-widget-pack')
 		);
-        $this->WP_Widget( 'themeblvd_horz_menu_widget', 'Theme Blvd Horizontal Menu', $widget_ops );
+        parent::__construct( 'themeblvd_horz_menu_widget', 'Theme Blvd Horizontal Menu', $widget_ops );
 	}
 
-	/* Widget Options Form */
-
-	function form( $instance ) {
+	/**
+	 * Widget Options Form
+	 */
+	public function form( $instance ) {
 		$nav_menu = isset( $instance['nav_menu'] ) ? $instance['nav_menu'] : '';
 
 		// Get menus
@@ -46,23 +47,27 @@ class TB_Horz_Menu extends WP_Widget {
 		<?php
 	}
 
-	/* Update Widget Settings */
-
-	function update( $new_instance, $old_instance ) {
+	/**
+	 * Update Widget Settings
+	 */
+	public function update( $new_instance, $old_instance ) {
 		$instance['nav_menu'] = (int) $new_instance['nav_menu'];
 		return $instance;
 	}
 
-	/* Display Widget */
+	/**
+	 * Display Widget
+	 */
+	public function widget($args, $instance) {
 
-	function widget($args, $instance) {
 		extract( $args );
 
 		// Get menu
 		$nav_menu = ! empty( $instance['nav_menu'] ) ? wp_get_nav_menu_object( $instance['nav_menu'] ) : false;
 
-		if ( !$nav_menu )
+		if ( !$nav_menu ) {
 			return;
+		}
 
 		echo $before_widget;
 		wp_nav_menu( array( 'fallback_cb' => '', 'container_class' => 'subnav', 'menu_class' => 'sf-menu nav nav-pills', 'menu' => $nav_menu ) );

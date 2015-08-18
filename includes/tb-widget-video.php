@@ -5,12 +5,12 @@
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
-
 class TB_Widget_Video extends WP_Widget {
 
-	/* Constructor */
-
-	function __construct() {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'tb-video_widget',
 			'description' => __('Quickly embed a video with WordPress\'s built-in oEmbed.', 'theme-blvd-widget-pack')
@@ -19,12 +19,13 @@ class TB_Widget_Video extends WP_Widget {
 			'width' => 400,
 			'height' => 350
 		);
-        $this->WP_Widget( 'themeblvd_video_widget', 'Theme Blvd Video', $widget_ops, $control_ops );
+        parent::__construct( 'themeblvd_video_widget', 'Theme Blvd Video', $widget_ops, $control_ops );
 	}
 
-	/* Widget Options Form */
-
-	function form($instance) {
+	/**
+	 * Widget Options Form
+	 */
+	public function form($instance) {
 		$defaults = array(
 			'title' => '',
             'video_url' => '',
@@ -49,9 +50,10 @@ class TB_Widget_Video extends WP_Widget {
         <?php
 	}
 
-	/* Update Widget Settings */
-
-	function update($new_instance, $old_instance) {
+	/**
+	 * Update Widget Settings
+ 	 */
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['video_url'] = strip_tags($new_instance['video_url']);
@@ -59,22 +61,33 @@ class TB_Widget_Video extends WP_Widget {
         return $instance;
 	}
 
-	/* Display Widget */
+	/**
+	 * Display Widget
+	 */
+	public function widget($args, $instance) {
 
-	function widget($args, $instance) {
 		extract( $args );
+
 		echo $before_widget;
+
 		$title = apply_filters( 'widget_title', $instance['title'] );
-		if ( $title )
+
+		if ( $title ) {
 			echo $before_title . $title . $after_title;
-		if( ! $instance['video_url'] ) {
+		}
+
+		if ( ! $instance['video_url'] ) {
             _e('You forgot to enter a video URL.', 'theme-blvd-widget-pack' );
             echo $after_widget;
             return;
 		}
+
 		echo wp_oembed_get( $instance['video_url'] );
-		if( $instance['description'] )
+
+		if ( $instance['description'] ) {
 			echo '<span class="tb-video_description">'.$instance['description'].'</span>';
+		}
+
 		echo $after_widget;
 	}
 

@@ -5,12 +5,12 @@
  * @package Theme Blvd WordPress Framework
  * @author Jason Bobich
  */
-
 class TB_Widget_Contact extends WP_Widget {
 
-	/* Constructor */
-
-	function __construct() {
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'tb-contact_widget',
 			'description' => __('Display some basic contact information.', 'theme-blvd-widget-pack')
@@ -19,12 +19,13 @@ class TB_Widget_Contact extends WP_Widget {
 			'width' => 400,
 			'height' => 350
 		);
-        $this->WP_Widget( 'themeblvd_contact_widget', 'Theme Blvd Simple Contact', $widget_ops, $control_ops );
+        parent::__construct( 'themeblvd_contact_widget', 'Theme Blvd Simple Contact', $widget_ops, $control_ops );
 	}
 
-	/* Widget Options Form */
-
-	function form($instance) {
+	/**
+	 * Widget Options Form
+	 */
+	public function form($instance) {
 		$defaults = array(
 			'title' => '',
             'phone_1' => '',
@@ -201,9 +202,10 @@ class TB_Widget_Contact extends WP_Widget {
         <?php
 	}
 
-	/* Update Widget Settings */
-
-	function update($new_instance, $old_instance) {
+	/**
+	 * Update Widget Settings
+	 */
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['phone_1'] = strip_tags($new_instance['phone_1']);
@@ -227,14 +229,21 @@ class TB_Widget_Contact extends WP_Widget {
         return $instance;
 	}
 
-	/* Display Widget */
+	/**
+	 * Display Widget
+	 */
+	public function widget($args, $instance) {
 
-	function widget($args, $instance) {
 		extract( $args );
+
 		echo $before_widget;
+
 		$title = apply_filters( 'widget_title', $instance['title'] );
-		if ( $title )
+
+		if ( $title ) {
 			echo $before_title . $title . $after_title;
+		}
+
 		echo themeblvd_get_simple_contact( $instance );
 		echo $after_widget;
 	}
