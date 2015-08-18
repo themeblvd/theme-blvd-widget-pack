@@ -2,7 +2,7 @@
 Author URI: http://www.themeblvd.com
 Contributors: themeblvd
 Tags: widgets, Theme Blvd, themeblvd, Jason Bobich
-Stable Tag: 1.0.4
+Stable Tag: 1.0.5
 
 When using a Theme Blvd theme, this plugin adds a few widgets to extend some of the functionality already built into the framework.
 
@@ -46,6 +46,8 @@ This widget allows you to select from any menus you've created under *Appearance
 3. Video Widget used with [Swagger WordPress Theme](http://themeforest.net/item/swagger-responsive-wordpress-theme/930581?ref=ThemeBlvd)
 
 == Changelog ==
+
+= 1.0.5 =
 
 = 1.0.4 =
 

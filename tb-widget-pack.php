@@ -2,7 +2,7 @@
 /*
 Plugin Name: Theme Blvd Widget Pack
 Description: This plugin adds a pack of widgets that work with the Theme Blvd framework.
-Version: 1.0.4
+Version: 1.0.5
 Author: Theme Blvd
 Author URI: http://themeblvd.com
 License: GPL2
@@ -25,7 +25,7 @@ License: GPL2
 
 */
 
-define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.4' );
+define( 'TB_WIDGET_PACK_PLUGIN_VERSION', '1.0.5' );
 define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
 define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
 
