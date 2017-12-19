@@ -47,31 +47,31 @@ This widget allows you to select from any menus you've created under *Appearance
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.1.0 - XX/XX/2017 =
 
-= 1.0.5 =
+= 1.0.5 - 08/15/2015 =
 
 * Fixed: WordPress 4.3 deprecated PHP4 style constructors.
 
-= 1.0.4 =
+= 1.0.4 - 12/10/2014 =
 
 * GlotPress compatibility (for 2015 wordpress.org release).
 * Minor security fix.
 
-= 1.0.3 =
+= 1.0.3 - 08/01/2013 =
 
 * Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
 * Mini Post Grid widget now accepts `[gallery]` shortcode usage for the Gallery Override feature. -- i.e. `[gallery link="file" ids="1,2,3"]`
 
-= 1.0.2 =
+= 1.0.2 - 05/31/2013 =
 
 * Added better compatibility for WPML with Mini Post List and Mini Post Grid widgets.
 * Fixed wording in warning when Theme Blvd framework isn't installed, and added "Dismiss" link.
 
-= 1.0.1 =
+= 1.0.1 - 03/22/2013 =
 
 * Fixed TB_SIDEBARS_PLUGIN_DIR notice from localization.
 
-= 1.0.0 =
+= 1.0.0 - 09/03/2012 =
 
 * This is the first release.
