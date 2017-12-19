@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Theme Blvd Widget Pack
-Description: This plugin adds a pack of widgets that work with the Theme Blvd framework.
+Description: A small pack of widgets for Theme Blvd themes.
 Version: 1.1.0
 Author: Theme Blvd
 Author URI: http://themeblvd.com
@@ -30,7 +30,7 @@ define( 'TB_WIDGET_PACK_PLUGIN_DIR', dirname( __FILE__ ) );
 define( 'TB_WIDGET_PACK_PLUGIN_URI', plugins_url( '' , __FILE__ ) );
 
 /**
- * Run Widget Pack
+ * Run Widget Pack.
  *
  * @since 1.0.0
  */
@@ -39,26 +39,35 @@ function themeblvd_widget_pack_init() {
 	// Include general functions
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/general.php' );
 
-	// Check to make sure Theme Blvd Framework 2.2+ is running
 	if( ! defined( 'TB_FRAMEWORK_VERSION' ) || version_compare( TB_FRAMEWORK_VERSION, '2.2.0', '<' ) ) {
+
 		add_action( 'admin_notices', 'themeblvd_widget_pack_warning' );
+
 		add_action( 'admin_init', 'themeblvd_widget_pack_disable_nag' );
+
 		return;
+
 	}
 
-	// Include widgets
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-contact.php' );
+
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-horz-nav.php' );
+
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-mini-post-grid.php' );
+
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-mini-post-list.php' );
+
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-video.php' );
 
-	// Register Widgets
-	register_widget('TB_Widget_Contact');
-	register_widget('TB_Horz_Menu');
-	register_widget('TB_Widget_Mini_Post_Grid');
-	register_widget('TB_Widget_Mini_Post_List');
-	register_widget('TB_Widget_Video');
+	register_widget( 'TB_Widget_Contact' );
+
+	register_widget( 'TB_Horz_Menu' );
+
+	register_widget( 'TB_Widget_Mini_Post_Grid' );
+
+	register_widget( 'TB_Widget_Mini_Post_List' );
+
+	register_widget( 'TB_Widget_Video' );
 
 }
 add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
@@ -69,6 +78,8 @@ add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );
  * @since 1.0.0
  */
 function themeblvd_widget_pack_textdomain() {
-	load_plugin_textdomain('theme-blvd-widget-pack');
+
+	load_plugin_textdomain( 'theme-blvd-widget-pack' );
+
 }
 add_action( 'init', 'themeblvd_widget_pack_textdomain' );
