@@ -2,7 +2,7 @@
 Author URI: http://www.themeblvd.com
 Contributors: themeblvd
 Tags: widgets, Theme Blvd, themeblvd, Jason Bobich
-Stable Tag: 1.1.0
+Stable Tag: 1.0.6
 
 When using a Theme Blvd theme, this plugin adds a few widgets to extend some of the functionality already built into the framework.
 
@@ -21,10 +21,6 @@ This widget utilizes the theme framework's post list system to display a simple 
 = Simple Contact =
 
 This widget provides you with some standard contact information you can fill out. Additionally you can setup a 1-6 icons linking to your relevant social networks; the 30 standard social network icons are included as possible selections for each.
-
-= Video =
-
-This widget will allow you to display any video compatible with WordPress's [oEmbed system](http://codex.wordpress.org/Embeds). When using this widget, you can take advantage of the fact that any video inserted via oEmbed with a Theme Blvd theme is responsive; this will allow your sidebar's video to scale down gracefully with the rest of your website.
 
 = Horizontal Menu =
 
@@ -47,9 +43,9 @@ This widget allows you to select from any menus you've created under *Appearance
 
 == Changelog ==
 
-= 1.1.0 - XX/XX/2017 =
+= 1.0.6 - 12/19/2017 =
 
-Removed the Video widget; use WordPress's core widget instead.
+Removed video widget; use WordPress's core widget instead.
 
 = 1.0.5 - 08/15/2015 =
 
@@ -62,7 +58,7 @@ Removed the Video widget; use WordPress's core widget instead.
 
 = 1.0.3 - 08/01/2013 =
 
-* Deleted Twitter widget. -- Use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
+* Removed Twitter widget; use [Tweeple](http://wordpress.org/plugins/tweeple/) instead.
 * Mini Post Grid widget now accepts `[gallery]` shortcode usage for the Gallery Override feature. -- i.e. `[gallery link="file" ids="1,2,3"]`
 
 = 1.0.2 - 05/31/2013 =

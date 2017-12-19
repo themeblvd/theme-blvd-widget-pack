@@ -28,7 +28,7 @@ function themeblvd_widget_pack_warning() {
 /**
  * Dismiss an admin notice.
  *
- * @since 1.0.6
+ * @since 1.0.4
  */
 function themeblvd_widget_pack_disable_nag() {
 
@@ -56,7 +56,7 @@ function themeblvd_widget_pack_disable_nag() {
 /**
  * Disable admin notice URL.
  *
- * @since 1.1.0
+ * @since 1.0.4
  */
 function themeblvd_widget_pack_disable_url( $id ) {
 
