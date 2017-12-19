@@ -57,8 +57,6 @@ function themeblvd_widget_pack_init() {
 
 	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-mini-post-list.php' );
 
-	include_once( TB_WIDGET_PACK_PLUGIN_DIR . '/includes/tb-widget-video.php' );
-
 	register_widget( 'TB_Widget_Contact' );
 
 	register_widget( 'TB_Horz_Menu' );
@@ -66,8 +64,6 @@ function themeblvd_widget_pack_init() {
 	register_widget( 'TB_Widget_Mini_Post_Grid' );
 
 	register_widget( 'TB_Widget_Mini_Post_List' );
-
-	register_widget( 'TB_Widget_Video' );
 
 }
 add_action( 'after_setup_theme', 'themeblvd_widget_pack_init' );

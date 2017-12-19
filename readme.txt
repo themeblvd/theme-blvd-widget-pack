@@ -49,6 +49,8 @@ This widget allows you to select from any menus you've created under *Appearance
 
 = 1.1.0 - XX/XX/2017 =
 
+Removed the Video widget; use WordPress's core widget instead.
+
 = 1.0.5 - 08/15/2015 =
 
 * Fixed: WordPress 4.3 deprecated PHP4 style constructors.
